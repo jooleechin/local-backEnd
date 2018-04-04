@@ -1,5 +1,5 @@
-const authModel = require('../models/auth.model')
-const userModel = require('../models/users.model')
+const authModel = require('../models/auth.models')
+// const userModel = require('../models/users.models')
 
 let login = (req, res, next) => {
   const { email, password } = req.body

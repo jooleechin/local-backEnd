@@ -4,10 +4,11 @@ exports.up = function(knex, Promise) {
     t.increments()
     t.integer('user_id').notNullable().defaultTo(0)
     t.foreign('user_id').references('users.id').onDelete('CASCADE')
-    t.string('q1').notNullable().defaultTo('')
-    t.string('q2').notNullable().defaultTo('')
-    t.string('q3').notNullable().defaultTo('')
-
+    t.string('destination').notNullable().defaultTo('')
+    t.string('latlang_stay').notNullable().defaultTo('')
+    t.string('q1_transport').notNullable().defaultTo('')
+    t.string('q2_time').notNullable().defaultTo('')
+    t.string('q3_interests').notNullable().defaultTo('')
   })
 };
 
