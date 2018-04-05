@@ -8,7 +8,14 @@ let getOneByUser = (id) => {
     .first()
 }
 
+let edit = (id) => {
+  return knex('questions')
+    .where({ id })
+    .first()
+}
+
 module.exports = {
   getAllQuestions,
-  getOneByUser
+  getOneByUser,
+  edit
 }

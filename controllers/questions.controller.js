@@ -8,7 +8,12 @@ let getOneByUser = (req, res, next) => {
   questionsModel.getOneByUser(req.params.id).then(one => res.json({ one }))
 }
 
+let edit = (req, res, next) => {
+  questionsModel.edit(req.params.id).then(one => res.json({ one }))
+}
+
 module.exports = {
   getAllQuestions,
-  getOneByUser
+  getOneByUser,
+  edit
 }
