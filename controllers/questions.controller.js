@@ -28,8 +28,8 @@ let edit = (req, res, next) => {
 }
 
 let create = (req, res, next) => {
-  let { user_id, destination, lat_stay, lng_stay, q1_transport, q2_time, q3_interests } = req.body
-  questionsModel.create(user_id, destination, lat_stay, lng_stay, q1_transport, q2_time, q3_interests)
+  let { user_id, destination, lat_stay, lng_stay, q1_transport, q2_money, q3_time, q4_interests  } = req.body
+  questionsModel.create(user_id, destination, lat_stay, lng_stay, q1_transport, q2_money, q3_time, q4_interests)
     .then(question => res.json({ question }))
     .catch(err => {
       res.json({ err })

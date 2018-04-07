@@ -14,7 +14,7 @@ let edit = (id) => {
     .where('user_id', id)
     .first()
 }
-let create = (user_id, destination, lat_stay, lng_stay, q1_transport, q2_time, q3_interests) => {
+let create = (user_id, destination, lat_stay, lng_stay, q1_transport, q2_money, q3_time, q4_interests) => {
   return knex('questions')
     .insert({
       user_id,
@@ -22,8 +22,9 @@ let create = (user_id, destination, lat_stay, lng_stay, q1_transport, q2_time, q
       lat_stay,
       lng_stay,
       q1_transport,
-      q2_time,
-      q3_interests
+      q2_money,
+      q3_time,
+      q4_interests
     })
     .returning('*')
 }

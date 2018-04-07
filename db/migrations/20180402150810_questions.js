@@ -8,8 +8,9 @@ exports.up = function(knex, Promise) {
     t.decimal('lat_stay', 11, 8).notNullable().defaultTo(0)
     t.decimal('lng_stay', 11, 8).notNullable().defaultTo(0)
     t.string('q1_transport').notNullable().defaultTo('')
-    t.string('q2_time').notNullable().defaultTo('')
-    t.string('q3_interests').notNullable().defaultTo('')
+    t.integer('q2_money').notNullable
+    t.string('q3_time').notNullable().defaultTo('')
+    t.string('q4_interests').notNullable().defaultTo('')
   })
 };
 
