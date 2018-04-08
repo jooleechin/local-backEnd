@@ -10,11 +10,25 @@ app.use(cors())
 app.use(bodyParser.json())
 
 app.get('/google', (req, res) => {
-  let { lat, lng , radius, type, keyword } = req.query
-  // let KEY = 'AIzaSyAAi2CjqjWvG6U7Y19t9W6BfYMDnHDuiLA'
-  let KEY = 'AIzaSyD16ge00rRuJtxfGlzUzlmuDBxa6GkEVCg'
-  let baseURL = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?`
-  return axios.get(`${baseURL}location=${lat},${lng}&radius=${radius}&type=${type}&keyword=${keyword}&key=${KEY}`)
+  let { lat, lng , radius, type, maxPrice } = req.query
+  let KEY = 'AIzaSyALvBudR4iVXU22Q5VkKNzXV4S7A9Q7Zqk'
+  // let KEY = 'AIzaSyD16ge00rRuJtxfGlzUzlmuDBxa6GkEVCg'
+  let baseURL = `https://maps.googleapis.com/maps/api/place/textsearch/json?`
+  return axios.get(`${baseURL}location=${lat},${lng}&radius=${radius}&type=${type}&maxprice=${maxPrice}&key=${KEY}`)
+  .then ((result) => {
+    res.send(result.data)
+  })
+  .catch((err) => {
+    console.log(err)
+  })
+})
+
+app.get('/googleKEYWORD', (req, res) => {
+  let { lat, lng , radius, type, keyword, maxPrice } = req.query
+  let KEY = 'AIzaSyDZgyzJiLq59ap77yMCrZCGNkIul2KKGgo'
+  // let KEY = 'AIzaSyD16ge00rRuJtxfGlzUzlmuDBxa6GkEVCg'
+  let baseURL = `https://maps.googleapis.com/maps/api/place/textsearch/json?`
+  return axios.get(`${baseURL}location=${lat},${lng}&radius=${radius}&type=${type}&keyword=${keyword}&maxprice=${maxPrice}&key=${KEY}`)
   .then ((result) => {
     res.send(result.data)
   })
@@ -26,8 +40,8 @@ app.get('/google', (req, res) => {
 app.get('/photo', (req, res) => {
   debugger
   let { photoreference } = req.query
-  // let KEY = 'AIzaSyAAi2CjqjWvG6U7Y19t9W6BfYMDnHDuiLA'
-  let KEY = 'AIzaSyD16ge00rRuJtxfGlzUzlmuDBxa6GkEVCg'
+  let KEY = 'AIzaSyDZgyzJiLq59ap77yMCrZCGNkIul2KKGgo'
+  // let KEY = 'AIzaSyD16ge00rRuJtxfGlzUzlmuDBxa6GkEVCg'
   let baseURL = `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400`
   return axios.get(`${baseURL}&photoreference=${photoreference}&key=${KEY}`)
   .then ((result) => {
