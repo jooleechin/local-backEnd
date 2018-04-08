@@ -25,7 +25,7 @@ app.get('/google', (req, res) => {
 
 app.get('/googleKEYWORD', (req, res) => {
   let { lat, lng , radius, type, keyword, maxPrice } = req.query
-  let KEY = 'AIzaSyDZgyzJiLq59ap77yMCrZCGNkIul2KKGgo'
+  let KEY = 'AIzaSyBkOs5y5vdEm210avDLMg5nWAcYlO6ai-0'
   // let KEY = 'AIzaSyD16ge00rRuJtxfGlzUzlmuDBxa6GkEVCg'
   let baseURL = `https://maps.googleapis.com/maps/api/place/textsearch/json?`
   return axios.get(`${baseURL}location=${lat},${lng}&radius=${radius}&type=${type}&keyword=${keyword}&maxprice=${maxPrice}&key=${KEY}`)
@@ -40,7 +40,7 @@ app.get('/googleKEYWORD', (req, res) => {
 app.get('/photo', (req, res) => {
   debugger
   let { photoreference } = req.query
-  let KEY = 'AIzaSyDZgyzJiLq59ap77yMCrZCGNkIul2KKGgo'
+  let KEY = 'AIzaSyBkOs5y5vdEm210avDLMg5nWAcYlO6ai-0'
   // let KEY = 'AIzaSyD16ge00rRuJtxfGlzUzlmuDBxa6GkEVCg'
   let baseURL = `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400`
   return axios.get(`${baseURL}&photoreference=${photoreference}&key=${KEY}`)
