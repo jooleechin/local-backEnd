@@ -3,5 +3,6 @@ module.exports = {
   itinRouter: require('./itin.routes'),
   placesRouter: require('./places.routes'),
   questionsRouter: require('./questions.routes'),
-  usersRouter: require('./users.routes')
+  usersRouter: require('./users.routes'),
+  itinPlacesRouter: require('./itin_places.routes')
 }

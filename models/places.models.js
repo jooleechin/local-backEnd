@@ -18,8 +18,25 @@ let erase = (id) => {
     })
 }
 
+let add = (name, address, lat, long, phone, hours, rating, photo, reviews) => {
+  return knex('places')
+    .insert({
+      name,
+      address,
+      lat,
+      long,
+      phone,
+      hours,
+      photo,
+      rating,
+      reviews,
+    })
+    .returning('*')
+}
+
 module.exports = {
   all,
   one,
-  erase
+  erase,
+  add
 }

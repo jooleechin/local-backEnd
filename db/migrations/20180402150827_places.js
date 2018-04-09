@@ -7,7 +7,6 @@ exports.up = function(knex, Promise) {
     t.decimal('lat').notNullable()
     t.decimal('long').notNullable()
     t.string('phone').notNullable()
-    t.string('type').notNullable().defaultTo('')
     t.json('hours').notNullable()
     t.json('photo').notNullable()
     t.integer('rating').notNullable().defaultTo(0),

@@ -12,8 +12,19 @@ let erase = (req, res, next) => {
   placesModel.erase(req.params.id).then(place => res.json({ place }))
 }
 
+let add = (req, res, next) => {
+  let { name, address, lat, long, phone, hours, rating, photo, reviews  } = req.body
+  placesModel.add(name, address, lat, long, phone, hours, rating, photo, reviews)
+    .then(place => res.json({ place }))
+    .catch(err => {
+      res.json({ err })
+      console.log(err)
+    })
+}
+
 module.exports  = {
   all,
   one,
-  erase
+  erase,
+  add
 }
