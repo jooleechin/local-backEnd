@@ -21,7 +21,26 @@ let erase = (req, res, next) => {
 }
 
 let itinByUserAndId = (req, res, next) => {
-  itinModel.itinByUserAndId(req.params.user_id, req.params.itin_id).then(allPlaces => res.json({ allPlaces }))
+  itinModel.itinByUserAndId(Number(req.params.itin_id), Number(req.params.user_id)).then(allPlaces => {
+    debugger
+    res.json({ allPlaces })
+  })
+  .catch(e => {
+    debugger
+    console.log(e)
+  })
+}
+
+let create = (req, res, next) => {
+  let { name, user_id, itin_date } = req.body
+  itinModel.create(name, user_id, itin_date)
+  .then(itin => {
+    res.json({ itin })
+  })
+  .catch(err => {
+    res.json({ err })
+    console.log(err)
+  })
 }
 
 module.exports = {
@@ -30,5 +49,6 @@ module.exports = {
   oneByUserId,
   edit,
   erase,
-  itinByUserAndId
+  itinByUserAndId,
+  create
 }

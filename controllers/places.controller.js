@@ -15,7 +15,9 @@ let erase = (req, res, next) => {
 let add = (req, res, next) => {
   let { name, address, lat, long, phone, hours, rating, photo, reviews  } = req.body
   placesModel.add(name, address, lat, long, phone, hours, rating, photo, reviews)
-    .then(place => res.json({ place }))
+    .then(place => {
+      res.json({ place })
+    })
     .catch(err => {
       res.json({ err })
       console.log(err)

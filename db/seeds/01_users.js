@@ -8,6 +8,7 @@ exports.seed = function(knex, Promise) {
         {id: 1, first: 'Joolee', last: 'Chin', email: 'jooleechin@gmail.com', phone: '8473236137', password: 'poop'},
         {id: 2, first: 'Bryce', last: 'Paine', email: 'bpaine@gmail.com', phone: '8473236137', password: 'hi'},
         {id: 3, first: 'Egg', last: 'Plant', email: 'eggplant@gmail.com', phone: '8473236137', password: 'eggplant'},
+        {id: 4, first: 'test', last: 'test', email: 'test@gmail.com', phone: '8473236137', password: 'test'}
       ])
     })
     .then(() => {

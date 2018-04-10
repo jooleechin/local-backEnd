@@ -6,6 +6,7 @@ router.get('/user/:id', itinController.oneByUserId)
 router.get('/:itin_id/user/:user_id', itinController.itinByUserAndId)
 router.get('/:id', itinController.oneById)
 router.put('/:id', itinController.edit)
+router.post('/',itinController.create)
 router.delete('/:id', itinController.erase)
 
 module.exports = router
