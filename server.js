@@ -44,11 +44,9 @@ app.get('/photo', (req, res) => {
   let baseURL = `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400`
   return axios.get(`${baseURL}&photoreference=${photoreference}&key=${KEY}`)
   .then ((result) => {
-    debugger
     res.json({path: result.request.path})
   })
   .catch ((err) => {
-    debugger
     console.log(err)
   })
 })

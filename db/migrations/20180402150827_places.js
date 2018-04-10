@@ -9,7 +9,7 @@ exports.up = function(knex, Promise) {
     t.string('phone').notNullable()
     t.json('hours').notNullable()
     t.json('photo').notNullable()
-    t.integer('rating').notNullable().defaultTo(0),
+    t.decimal('rating').notNullable().defaultTo(0),
     t.json('reviews').notNullable()
   })
 };

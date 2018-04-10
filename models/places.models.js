@@ -19,6 +19,7 @@ let erase = (id) => {
 }
 
 let add = (name, address, lat, long, phone, hours, rating, photo, reviews) => {
+  debugger
   return knex('places')
     .insert({
       name,
@@ -31,6 +32,7 @@ let add = (name, address, lat, long, phone, hours, rating, photo, reviews) => {
       rating,
       reviews,
     })
+    .first()
     .returning('*')
 }
 

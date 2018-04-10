@@ -10,7 +10,6 @@ exports.seed = function(knex, Promise) {
           lat: -33.8666199,
           long: 151.1958527,
           phone: '(206) 623-5057',
-          type: 'food',
           hours: JSON.stringify([
             {
               "close": {
@@ -111,7 +110,6 @@ exports.seed = function(knex, Promise) {
           lat: -33.8666199,
           long: 151.1958527,
           phone: '(206) 623-5057',
-          type: 'food',
           hours: JSON.stringify([
             {
               "close": {

@@ -29,9 +29,20 @@ let erase = (id) => {
     .where({ id })
     .del()
     .returning('*')
-    .then(([result]) => {
+    .then(([result]) => { //taking out of array
       return result
     })
+}
+
+let itinByUserAndId = (itin_id, user_id) => {
+  return knex('itin')
+    .innerJoin('itin_places', 'itin.id', 'itin_places.itin_id')
+    .innerJoin('places', 'places.id', 'itin_places.places_id')
+    .where({
+      'itin.id': itin_id,
+      'user_id': user_id
+    })
+    .select()
 }
 
 module.exports = {
@@ -39,5 +50,6 @@ module.exports = {
   oneById,
   oneByUserId,
   edit,
-  erase
+  erase,
+  itinByUserAndId
 }

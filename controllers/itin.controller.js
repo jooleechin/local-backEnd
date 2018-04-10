@@ -20,10 +20,15 @@ let erase = (req, res, next) => {
   itinModel.erase(req.params.id).then(itin => res.json({ itin }))
 }
 
+let itinByUserAndId = (req, res, next) => {
+  itinModel.itinByUserAndId(req.params.user_id, req.params.itin_id).then(allPlaces => res.json({ allPlaces }))
+}
+
 module.exports = {
   all,
   oneById,
   oneByUserId,
   edit,
-  erase
+  erase,
+  itinByUserAndId
 }
