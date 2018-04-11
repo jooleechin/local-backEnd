@@ -1,5 +1,5 @@
 
-exports.up = function(knex, Promise) {
+exports.up = function(knex, Promise) { 
   return knex.schema.createTable('itin', (t) => {
     t.increments()
     t.string('name').notNullable().defaultTo('')
