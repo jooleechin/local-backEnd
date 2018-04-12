@@ -32,8 +32,8 @@ let itinByUserAndId = (req, res, next) => {
 }
 
 let create = (req, res, next) => {
-  let { name, user_id, itin_date } = req.body
-  itinModel.create(name, user_id, itin_date)
+  let { name, user_id, itin_date, destination } = req.body
+  itinModel.create(name, user_id, itin_date, destination)
   .then(itin => {
     res.json({ itin })
   })
