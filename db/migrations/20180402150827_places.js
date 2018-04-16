@@ -10,7 +10,9 @@ exports.up = function(knex, Promise) {
     t.json('hours').notNullable()
     t.json('photo').notNullable()
     t.decimal('rating').notNullable().defaultTo(0),
-    t.json('reviews').notNullable()
+    t.json('reviews').notNullable(),
+    t.string('photoUrl').notNullable(),
+    t.string('googlePlace_ID').notNullable()
   })
 };
 

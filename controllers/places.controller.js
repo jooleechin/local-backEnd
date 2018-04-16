@@ -13,8 +13,8 @@ let erase = (req, res, next) => {
 }
 
 let add = (req, res, next) => {
-  let { name, address, lat, long, phone, hours, rating, photo, reviews  } = req.body
-  placesModel.add(name, address, lat, long, phone, hours, rating, photo, reviews)
+  let { name, address, lat, long, phone, hours, rating, photo, reviews, photoUrl, googlePlace_ID  } = req.body
+  placesModel.add(name, address, lat, long, phone, hours, rating, photo, reviews, photoUrl, googlePlace_ID)
     .then(place => {
       res.json({ place })
     })

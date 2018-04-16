@@ -3,6 +3,7 @@ const { questionsController } = require('../controllers')
 
 router.get('/', questionsController.getAllQuestions)
 router.get('/users/:id', questionsController.getOneByUser)
+router.get('/itin/:id', questionsController.getOneByItinID)
 router.put('/:id', questionsController.edit)
 router.post('/', questionsController.create)
 

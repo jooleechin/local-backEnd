@@ -8,13 +8,18 @@ let getOneByUser = (id) => {
     .where('user_id', id)
     .first()
 }
+let getOneByItinID = (id) => {
+  return knex('questions')
+    .where('itin_id', id)
+    .first()
+}
 
 let edit = (id) => {
   return knex('questions')
-    .where('user_id', id)
+    .where('itin_id', id)
     .first()
 }
-let create = (user_id, destination, lat_stay, lng_stay, q1_transport, q2_money, q3_time, q4_interests) => {
+let create = (user_id, destination, lat_stay, lng_stay, q1_transport, q2_money, q3_time, q4_interests, itin_id) => {
   return knex('questions')
     .insert({
       user_id,
@@ -24,7 +29,8 @@ let create = (user_id, destination, lat_stay, lng_stay, q1_transport, q2_money, 
       q1_transport,
       q2_money,
       q3_time,
-      q4_interests
+      q4_interests,
+      itin_id
     })
     .returning('*')
 }
@@ -32,5 +38,6 @@ module.exports = {
   getAllQuestions,
   getOneByUser,
   edit,
-  create
+  create,
+  getOneByItinID
 }

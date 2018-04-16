@@ -11,6 +11,8 @@ exports.up = function(knex, Promise) {
     t.integer('q2_money').notNullable
     t.string('q3_time').notNullable().defaultTo('')
     t.string('q4_interests').notNullable().defaultTo('')
+    t.integer('itin_id').notNullable().defaultTo(0)
+    t.foreign('itin_id').references('itin.id').onDelete('CASCADE')
   })
 };
 

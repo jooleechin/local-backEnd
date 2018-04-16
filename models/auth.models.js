@@ -15,13 +15,12 @@ let comparePass = (email, password) => {
   })
 }
 
-let signup = (first, last, email, phone, password) => {
+let signup = (first, last, email, password) => {
   return knex('users')
   .insert({
     first,
     last,
     email,
-    phone,
     password
   })
   .returning('*')

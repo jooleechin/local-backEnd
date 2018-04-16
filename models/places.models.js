@@ -18,7 +18,7 @@ let erase = (id) => {
     })
 }
 
-let add = (name, address, lat, long, phone, hours, rating, photo, reviews) => {
+let add = (name, address, lat, long, phone, hours, rating, photo, reviews, photoUrl, googlePlace_ID) => {
   return knex('places')
     .insert({
       name,
@@ -30,6 +30,8 @@ let add = (name, address, lat, long, phone, hours, rating, photo, reviews) => {
       photo,
       rating,
       reviews,
+      photoUrl,
+      googlePlace_ID
     })
     .returning('*')
 }

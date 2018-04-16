@@ -22,11 +22,9 @@ let erase = (req, res, next) => {
 
 let itinByUserAndId = (req, res, next) => {
   itinModel.itinByUserAndId(Number(req.params.itin_id), Number(req.params.user_id)).then(allPlaces => {
-    debugger
     res.json({ allPlaces })
   })
   .catch(e => {
-    debugger
     console.log(e)
   })
 }

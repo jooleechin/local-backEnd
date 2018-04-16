@@ -35,14 +35,13 @@ let erase = (id) => {
 }
 
 let itinByUserAndId = (itin_id, user_id) => {
-  debugger
   return knex('itin')
     .select(
       ['itin.id as itin_id', 'itin.name as itin_name', 'itin.user_id as user_id',
       'itin.itin_date as itin_date', 'itin.destination as destination',
       'itin_places.places_id', 'itin_places.order', 'places.name as places_name',
       'places.address', 'places.lat', 'places.long', 'places.phone', 'places.hours',
-      'places.photo', 'places.rating', 'places.reviews']
+      'places.photo', 'places.rating', 'places.reviews', 'places.photoUrl', 'places.googlePlace_ID']
     )
     .innerJoin('itin_places', 'itin.id', 'itin_places.itin_id')
     .innerJoin('places', 'places.id', 'itin_places.places_id')

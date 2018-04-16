@@ -11,8 +11,8 @@ let login = (req, res, next) => {
 }
 
 let signup = (req, res, next) => {
-  let { first, last, email, phone, password } = req.body
-  authModel.signup(first, last, email, phone, password)
+  let { first, last, email, password } = req.body
+  authModel.signup(first, last, email, password)
     .then (results => {
       res.json(results)
     })

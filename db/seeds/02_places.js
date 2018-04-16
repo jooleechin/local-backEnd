@@ -100,7 +100,9 @@ exports.seed = function(knex, Promise) {
               "text": "It may be a great place to work - but customer service is totally non existent! Google only is what it is because it has a total monopoly on what they do. I have been trying for DAYS to get assistance, and everyone tells me it is someone else's problem, or they just ignore my emails - and that is if I can get someone on a phone. It is disgraceful.",
               "time": 1519253934
             }
-          ])
+          ]),
+          photoUrl: "https://lh4.googleusercontent.com/p/AF1QipNA82uKYxNkZqM5ABmVM7BNfjAqt49xSTPNX7rF=s1600-w400",
+          googlePlace_ID: "ChIJC2j55LNqkFQRRqBoRA_a_3A"
         },
 
         {
@@ -200,7 +202,9 @@ exports.seed = function(knex, Promise) {
               "text": "It may be a great place to work - but customer service is totally non existent! Google only is what it is because it has a total monopoly on what they do. I have been trying for DAYS to get assistance, and everyone tells me it is someone else's problem, or they just ignore my emails - and that is if I can get someone on a phone. It is disgraceful.",
               "time": 1519253934
             }
-          ])
+          ]),
+          photoUrl: "https://lh4.googleusercontent.com/p/AF1QipNA82uKYxNkZqM5ABmVM7BNfjAqt49xSTPNX7rF=s1600-w400",
+          googlePlace_ID: "ChIJC2j55LNqkFQRRqBoRA_a_3A"
         }
       ])
     })
