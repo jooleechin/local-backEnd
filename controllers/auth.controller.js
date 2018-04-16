@@ -5,6 +5,8 @@ let login = (req, res, next) => {
   const { email, password } = req.body
   authModel.comparePass(email, password)
     .then(matches => {
+      debugger
+      console.log('matches', matches)
       res.json({ matches })
     })
     .catch(e => next(e))
