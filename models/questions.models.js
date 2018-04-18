@@ -13,6 +13,14 @@ let getOneByItinID = (id) => {
     .where('itin_id', id)
     .first()
 }
+let getQuestionByUserAndItin =(user_id, itin_id) => {
+  return knex('questions')
+    .where({
+      user_id: user_id,
+      itin_id: itin_id
+    })
+    .first()
+}
 
 let edit = (id) => {
   return knex('questions')
@@ -39,5 +47,6 @@ module.exports = {
   getOneByUser,
   edit,
   create,
-  getOneByItinID
+  getOneByItinID,
+  getQuestionByUserAndItin
 }

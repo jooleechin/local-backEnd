@@ -18,6 +18,15 @@ let getOneByItinID = (req, res, next) => {
   })
 }
 
+let getQuestionByUserAndItin = (req, res, next) => {
+  questionsModel.getQuestionByUserAndItin(req.params.user_id, req.params.itin_id)
+  .then(one => res.json({ one }))
+  .catch(err => {
+    res.json({ err })
+    console.log(err)
+  })
+}
+
 let getOneByUser = (req, res, next) => {
   questionsModel.getOneByUser(req.params.id)
     .then(one => res.json({ one }))
@@ -50,5 +59,6 @@ module.exports = {
   getOneByUser,
   edit,
   create,
-  getOneByItinID
+  getOneByItinID,
+  getQuestionByUserAndItin
 }
