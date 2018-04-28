@@ -3,7 +3,6 @@ const authModel = require('../models/auth.models')
 
 let login = (req, res, next) => {
   const { email, password } = req.body
-  debugger
   authModel.comparePass(email, password)
     .then(matches => {
       debugger
